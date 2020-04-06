@@ -1,0 +1,26 @@
+<mat-toolbar>Menu</mat-toolbar>
+<mat-nav-list>
+  <a mat-list-item href="#">Link 1</a>
+  <a mat-list-item href="#">Link 2</a>
+  <a mat-list-item href="#">Link 3</a>
+</mat-nav-list>
+
+<mat-list>
+  <mat-list-item>
+    <mat-slide-toggle (change)="toggleLongPolling$.emit($event.checked)">
+      Start/stop long polling
+    </mat-slide-toggle>
+  </mat-list-item>
+
+  <mat-divider></mat-divider>
+
+  <mat-list-item>
+    Is online: {{ onlineStatus$ | async }}
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-slide-toggle [checked]="onlineStatus$ | async" (change)="toggleOnline$.emit($event.checked)">
+      Online
+    </mat-slide-toggle>
+  </mat-list-item>
+</mat-list>
