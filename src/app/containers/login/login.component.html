@@ -1,0 +1,17 @@
+<mat-list>
+  <mat-list-item>
+    <p>Case when logged in is not depended on online status, check console for <i>'User is online and logged in'</i></p>
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-slide-toggle (change)="isUserLoggedIn$.emit($event.checked)">
+      User logged in
+    </mat-slide-toggle>
+  </mat-list-item>
+
+  <mat-list-item>
+   <p>Loged In {{isUserLoggedIn$ | async}}</p>
+  </mat-list-item>
+
+  <mat-divider></mat-divider>
+</mat-list>
