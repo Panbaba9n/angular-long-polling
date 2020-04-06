@@ -1,0 +1,17 @@
+<mat-list>
+  <mat-list-item>
+    <p>Check console for List of random mumbers</p>
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-slide-toggle (change)="toogleListOfNumbers$.emit($event.checked)">
+      User logged in
+    </mat-slide-toggle>
+  </mat-list-item>
+
+  <mat-divider></mat-divider>
+
+  <mat-list-item>
+    <p>{{ listOfNumbers | json }}</p>
+  </mat-list-item>
+</mat-list>
