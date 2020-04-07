@@ -1,0 +1,24 @@
+<p>
+  <mat-form-field appearance="outline">
+    <mat-label>Search messages</mat-label>
+    <input matInput placeholder="Placeholder test" [formControl]="search">
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
+</p>
+
+<!--
+<div>
+  <ul>
+    <li *ngFor="let message of messages$ | async; trackBy: trackByMessages">
+      {{message.text}}
+    </li>
+  </ul>
+</div> -->
+
+<div>
+  <ul>
+    <li *ngFor="let message of messages; trackBy: trackByMessages">
+      {{message.text}}
+    </li>
+  </ul>
+</div>
