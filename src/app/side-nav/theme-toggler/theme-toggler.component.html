@@ -1,0 +1,16 @@
+<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Select theme" matTooltip="Select theme">
+  <mat-icon>format_color_fill</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <mat-radio-group
+    mat-menu-item
+    (change)="onRadioChange($event.value)"
+    class="theme-options-wrap"
+    aria-label="Select a theme"
+  >
+    <mat-radio-button *ngFor="let theme of themes" [value]="theme" [checked]="theme === selectedTheme">
+      {{theme}}
+    </mat-radio-button>
+  </mat-radio-group>
+</mat-menu>
+
