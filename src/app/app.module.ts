@@ -13,16 +13,22 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MenuComponent } from './side-nav/menu/menu.component';
+import { ThemeTogglerComponent } from './side-nav/theme-toggler/theme-toggler.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SideNavComponent,
-    MenuComponent
+    MenuComponent,
+    ThemeTogglerComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
@@ -32,7 +38,9 @@ import { MenuComponent } from './side-nav/menu/menu.component';
     MatIconModule,
     MatListModule,
     MatSlideToggleModule,
-    HttpClientModule
+    MatMenuModule,
+    MatRadioModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
