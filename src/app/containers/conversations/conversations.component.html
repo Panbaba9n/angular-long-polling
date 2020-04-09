@@ -1,0 +1,15 @@
+<div class="conversation-wrapper">
+  <div *ngFor="let conversation of conversations; trackBy: trackByConversations" class="conversation">
+    <div *ngFor="let message of conversation.messages" [ngClass]="{'right': message.userId === 1}">
+      <span class="message">{{message.text}}</span>
+    </div>
+  </div>
+
+  <form [formGroup]="messageForm" (ngSubmit)="onSubmit()" class="send-message-form">
+    <input formControlName="newMessage" type="text" />
+    <button type="submit" mat-icon-button color="accent" aria-label="Example icon-button with a heart icon">
+      <mat-icon>send</mat-icon>
+    </button>
+  </form>
+</div>
+

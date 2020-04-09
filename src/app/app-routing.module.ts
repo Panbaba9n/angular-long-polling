@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./containers/messages/messages.module').then(m => m.MessagesModule),
   },
   {
+    path: 'conversations',
+    loadChildren: () => import('./containers/conversations/conversations.module').then(m => m.ConversationsModule),
+  },
+  {
     path: '',
     redirectTo: '/login',
     pathMatch: 'full'
