@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://localhost:4200/api/v1',
+  inMemoryDataBase: {
+    root: 'api/v1',
+    delay: 1000
+  }
 };
 
 /*

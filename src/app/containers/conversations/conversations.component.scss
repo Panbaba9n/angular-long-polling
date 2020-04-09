@@ -1,0 +1,36 @@
+.conversation-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 0;
+}
+
+.right {
+  text-align: right;
+
+  .message {
+    background-color: rgba(0, 125, 255 ,0.3);
+  }
+}
+
+.message {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0 ,0.04);
+}
+
+.send-message-form {
+  display: flex;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 0 8px 0 16px;
+  margin-top: 16px;
+
+  input {
+    flex: 1 auto;
+    border: none;
+    font-size: 1em;
+    outline: none;
+  }
+}

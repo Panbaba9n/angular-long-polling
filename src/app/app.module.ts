@@ -2,6 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
+// NgRx Store
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { AppEntityDataModule } from './store/app-entity-data/app-entity-data.module';
+
+// Temporary DB
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { DataBaseService, dataBaseConfig } from './services/data-base/data-base.service';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,6 +29,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MenuComponent } from './side-nav/menu/menu.component';
 import { ThemeTogglerComponent } from './side-nav/theme-toggler/theme-toggler.component';
 
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +42,11 @@ import { ThemeTogglerComponent } from './side-nav/theme-toggler/theme-toggler.co
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
+    AppEntityDataModule,
+    environment.production ? [] : StoreDevtoolsModule.instrument({ maxAge: 25 }),
+    InMemoryWebApiModule.forRoot(DataBaseService, dataBaseConfig),
     BrowserAnimationsModule,
     LayoutModule,
     MatToolbarModule,
